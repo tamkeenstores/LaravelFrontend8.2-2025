@@ -47,6 +47,12 @@ return [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
+            // 'read' => [
+            //     	'host' => env('DB_READ_HOST', '127.0.0.1'),
+            //     ],
+            //     'write' => [
+            //     	'host' => env('DB_HOST', '127.0.0.1'),
+            //     ],
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
@@ -62,6 +68,16 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+        
+        'second_db' => [
+            'driver' => 'mysql',
+            'host' => env('SECOND_DB_HOST', '127.0.0.1'),
+            'port' => env('SECOND_DB_PORT', '3306'),
+            'database' => env('SECOND_DB_DATABASE', 'forge'),
+            'username' => env('SECOND_DB_USERNAME', 'forge'),
+            'password' => env('SECOND_DB_PASSWORD', ''),
+            // ...
+        ],
 
         'pgsql' => [
             'driver' => 'pgsql',
@@ -74,7 +90,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'schema' => 'public',
+            'search_path' => 'public',
             'sslmode' => 'prefer',
         ],
 
@@ -89,6 +105,8 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
+            // 'encrypt' => env('DB_ENCRYPT', 'yes'),
+            // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
     ],
@@ -129,7 +147,8 @@ return [
         'default' => [
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
+            'username' => env('REDIS_USERNAME'),
+            'password' => env('REDIS_PASSWORD'),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_DB', '0'),
         ],
@@ -137,7 +156,8 @@ return [
         'cache' => [
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
+            'username' => env('REDIS_USERNAME'),
+            'password' => env('REDIS_PASSWORD'),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
         ],

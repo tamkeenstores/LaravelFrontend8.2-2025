@@ -1,0 +1,30 @@
+{
+    "name": "webewox/hyperpay",
+    "description": "HyperPay Payment Gateway",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Webewox\\Hyperpay\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Webewox",
+            "email": "info@webewox.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "version": "1.1",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webewox\\Hyperpay\\CustomPackageServiceProvider"
+            ],
+            "aliases": {
+                "HyperPay": "Webewox\\Hyperpay\\Facades\\CustomPackageFacade"
+            }
+        }
+    }
+}
