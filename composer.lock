@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd23f6e53d791685510a72c133cd5f25",
+    "content-hash": "b8f22996c10880af72a5efa88a486699",
     "packages": [
         {
             "name": "brick/math",
@@ -2445,35 +2445,42 @@
         },
         {
             "name": "misterspelik/laravel-pdf",
-            "version": "1.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/misterspelik/laravel-pdf.git",
-                "reference": "7a897209477b1b092ac212d4442d103f6ed19577"
+                "reference": "5f92d858f1190dd8755f4c72d36b67b8ed8b861b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/misterspelik/laravel-pdf/zipball/7a897209477b1b092ac212d4442d103f6ed19577",
-                "reference": "7a897209477b1b092ac212d4442d103f6ed19577",
+                "url": "https://api.github.com/repos/misterspelik/laravel-pdf/zipball/5f92d858f1190dd8755f4c72d36b67b8ed8b861b",
+                "reference": "5f92d858f1190dd8755f4c72d36b67b8ed8b861b",
                 "shasum": ""
             },
             "require": {
-                "misterspelik/mpdf": "^8.1.6",
-                "php": ">=7.4"
+                "misterspelik/mpdf": "^8.1.8",
+                "php": "^7.4 || ^8.0",
+                "psr/http-message": "^1.1 || ^2.0",
+                "psr/log": "^1.1.0 || ^2.0.0 || ^3.0.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^3.7",
-                "phpunit/phpunit": "^7.4"
+                "orchestra/testbench": "^8.5.0",
+                "phpunit/phpunit": "^9.6.0"
+            },
+            "suggest": {
+                "ext-gd": "Needed to support images creation and conversion",
+                "ext-imagick": "Allows more advanced work with images",
+                "ext-mbstring": "Needed in order to work with multi-byte strings"
             },
             "type": "library",
             "extra": {
                 "laravel": {
-                    "providers": [
-                        "misterspelik\\LaravelPdf\\PdfServiceProvider"
-                    ],
                     "aliases": {
                         "PDF": "misterspelik\\LaravelPdf\\Facades\\Pdf"
-                    }
+                    },
+                    "providers": [
+                        "misterspelik\\LaravelPdf\\Providers\\PdfServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -2485,29 +2492,38 @@
             "license": [
                 "MIT"
             ],
+            "authors": [
+                {
+                    "name": "Yaroslav Krutikov",
+                    "email": "misterspelik@gmail.com",
+                    "homepage": "https://github.com/misterspelik"
+                }
+            ],
             "description": "Generate PDFs in Laravel with this mPDF wrapper.",
+            "homepage": "https://github.com/misterspelik/laravel-pdf",
             "keywords": [
                 "laravel",
                 "mpdf",
                 "pdf"
             ],
             "support": {
-                "source": "https://github.com/misterspelik/laravel-pdf/tree/1.1.0"
+                "issues": "https://github.com/misterspelik/laravel-pdf/issues",
+                "source": "https://github.com/misterspelik/laravel-pdf/tree/2.2.0"
             },
-            "time": "2023-07-21T11:11:30+00:00"
+            "time": "2025-01-08T12:30:01+00:00"
         },
         {
             "name": "misterspelik/mpdf",
-            "version": "8.1.7",
+            "version": "8.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/misterspelik/mpdf.git",
-                "reference": "cd396105b010e885ca2917b470783ac3e2a9f346"
+                "reference": "79e148e1f33a0ff60b75028e646ca9b75e4c6d82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/misterspelik/mpdf/zipball/cd396105b010e885ca2917b470783ac3e2a9f346",
-                "reference": "cd396105b010e885ca2917b470783ac3e2a9f346",
+                "url": "https://api.github.com/repos/misterspelik/mpdf/zipball/79e148e1f33a0ff60b75028e646ca9b75e4c6d82",
+                "reference": "79e148e1f33a0ff60b75028e646ca9b75e4c6d82",
                 "shasum": ""
             },
             "require": {
@@ -2517,7 +2533,7 @@
                 "mpdf/psr-log-aware-trait": "^2.0 || ^3.0",
                 "myclabs/deep-copy": "^1.7",
                 "paragonie/random_compat": "^1.4|^2.0|^9.99.99",
-                "php": "^5.6 || ^7.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
+                "php": "^5.6 || ^7.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
                 "psr/http-message": "^1.0 || ^2.0",
                 "psr/log": "^1.0 || ^2.0 || ^3.0",
                 "setasign/fpdi": "^2.1"
@@ -2565,7 +2581,7 @@
                 "utf-8"
             ],
             "support": {
-                "docs": "http://mpdf.github.io",
+                "docs": "https://mpdf.github.io",
                 "issues": "https://github.com/mpdf/mpdf/issues",
                 "source": "https://github.com/mpdf/mpdf"
             },
@@ -2575,7 +2591,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-01-10T16:08:40+00:00"
+            "time": "2025-01-06T12:43:46+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2772,16 +2788,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.11.1",
+            "version": "1.13.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "7284c22080590fb39f2ffa3e9057f10a4ddd0e0c"
+                "reference": "07d290f0c47959fd5eed98c95ee5602db07e0b6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/7284c22080590fb39f2ffa3e9057f10a4ddd0e0c",
-                "reference": "7284c22080590fb39f2ffa3e9057f10a4ddd0e0c",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/07d290f0c47959fd5eed98c95ee5602db07e0b6a",
+                "reference": "07d290f0c47959fd5eed98c95ee5602db07e0b6a",
                 "shasum": ""
             },
             "require": {
@@ -2789,11 +2805,12 @@
             },
             "conflict": {
                 "doctrine/collections": "<1.6.8",
-                "doctrine/common": "<2.13.3 || >=3,<3.2.2"
+                "doctrine/common": "<2.13.3 || >=3 <3.2.2"
             },
             "require-dev": {
                 "doctrine/collections": "^1.6.8",
                 "doctrine/common": "^2.13.3 || ^3.2.2",
+                "phpspec/prophecy": "^1.10",
                 "phpunit/phpunit": "^7.5.20 || ^8.5.23 || ^9.5.13"
             },
             "type": "library",
@@ -2819,7 +2836,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.11.1"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.4"
             },
             "funding": [
                 {
@@ -2827,7 +2844,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-08T13:26:56+00:00"
+            "time": "2025-08-01T08:46:24+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3768,16 +3785,16 @@
         },
         {
             "name": "psr/log",
-            "version": "3.0.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001"
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe5ea303b0887d5caefd3d431c3e61ad47037001",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
                 "shasum": ""
             },
             "require": {
@@ -3812,9 +3829,9 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/3.0.0"
+                "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
-            "time": "2021-07-14T16:46:02+00:00"
+            "time": "2024-09-11T13:17:53+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -4174,31 +4191,31 @@
         },
         {
             "name": "setasign/fpdi",
-            "version": "v2.6.0",
+            "version": "v2.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Setasign/FPDI.git",
-                "reference": "a6db878129ec6c7e141316ee71872923e7f1b7ad"
+                "reference": "4b53852fde2734ec6a07e458a085db627c60eada"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Setasign/FPDI/zipball/a6db878129ec6c7e141316ee71872923e7f1b7ad",
-                "reference": "a6db878129ec6c7e141316ee71872923e7f1b7ad",
+                "url": "https://api.github.com/repos/Setasign/FPDI/zipball/4b53852fde2734ec6a07e458a085db627c60eada",
+                "reference": "4b53852fde2734ec6a07e458a085db627c60eada",
                 "shasum": ""
             },
             "require": {
                 "ext-zlib": "*",
-                "php": "^5.6 || ^7.0 || ^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "conflict": {
                 "setasign/tfpdf": "<1.31"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5.7",
+                "phpunit/phpunit": "^7",
                 "setasign/fpdf": "~1.8.6",
                 "setasign/tfpdf": "~1.33",
                 "squizlabs/php_codesniffer": "^3.5",
-                "tecnickcom/tcpdf": "~6.2"
+                "tecnickcom/tcpdf": "^6.8"
             },
             "suggest": {
                 "setasign/fpdf": "FPDI will extend this class but as it is also possible to use TCPDF or tFPDF as an alternative. There's no fixed dependency configured."
@@ -4234,7 +4251,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Setasign/FPDI/issues",
-                "source": "https://github.com/Setasign/FPDI/tree/v2.6.0"
+                "source": "https://github.com/Setasign/FPDI/tree/v2.6.4"
             },
             "funding": [
                 {
@@ -4242,7 +4259,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-11T16:03:32+00:00"
+            "time": "2025-08-05T09:57:14+00:00"
         },
         {
             "name": "spatie/laravel-sluggable",
@@ -6771,7 +6788,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/webewox/hyperpay",
-                "reference": "521f7947fb2e2d381a2929a500a7f1c8b5a149cd"
+                "reference": "2b3ad0cfb90d9df4ab6a15db6bbd7ff958e8f0f4"
             },
             "type": "library",
             "extra": {
@@ -9246,12 +9263,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
