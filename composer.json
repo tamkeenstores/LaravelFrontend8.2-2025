@@ -22,7 +22,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "maatwebsite/excel": "^3.1",
-        "misterspelik/laravel-pdf": "^1.1",
+        "misterspelik/laravel-pdf": "^2.2",
         "spatie/laravel-sluggable": "^3.5",
         "webewox/hyperpay": "^1.1"
     },
